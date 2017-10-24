@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -20,8 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.luisf.asuper.Datos.Item;
-import com.example.luisf.asuper.Datos.ItemCRUD;
+import com.example.luisf.asuper.Datos.Item.Item;
+import com.example.luisf.asuper.Datos.Item.ItemCRUD;
 import com.example.luisf.asuper.R;
 import com.squareup.picasso.Picasso;
 
@@ -30,12 +31,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class AddItem extends AppCompatActivity {
 
-    private EditText etNombre, etPrecio, etId;
+    private EditText etNombre, etPrecio;
     private Button bTomar, bSeleccionar, bSave;
     private ImageView ivFoto;
     private TextView tvUrl;
@@ -58,16 +58,15 @@ public class AddItem extends AppCompatActivity {
         setContentView(R.layout.activity_add_item);
         etNombre = (EditText) findViewById(R.id.etNombre);
         etPrecio = (EditText) findViewById(R.id.etPrecio);
-        etId = (EditText) findViewById(R.id.etId);
         bTomar = (Button) findViewById(R.id.bTomar);
         bSeleccionar = (Button) findViewById(R.id.bSeleccionar);
-        bSave = (Button) findViewById(R.id.bGuardar);
+        //bSave = (Button) findViewById(R.id.bGuardar);
         ivFoto = (ImageView) findViewById(R.id.ivNewFoto);
         tvUrl = (TextView) findViewById(R.id.tvUrl);
 
         crud = new ItemCRUD(this);
 
-        /*bSeleccionar.setOnClickListener(new View.OnClickListener() {
+        bSeleccionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validarPermisosStorage();
@@ -79,35 +78,37 @@ public class AddItem extends AppCompatActivity {
             public void onClick(View view) {
                 validarPermisosCamara();
             }
-        });*/
+        });
 
-        bSave.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabSave);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Se dio click en guardar
-                String id = etId.getText().toString();
                 String nombre = etNombre.getText().toString();
-                String precio = etNombre.getText().toString();
-                //String urlFoto = tvUrl.getText().toString();
-                String urlFoto = "Foto";
+                String precio = etPrecio.getText().toString();
+                String urlFoto = tvUrl.getText().toString();
+                //String urlFoto = "Foto";
 
                 if (nombre.isEmpty()) {
-                    // Favor de escribir algo en nombre
+                    Toast.makeText(AddItem.this, "Ingresar Nombre",
+                            Toast.LENGTH_LONG).show();
                 } else if (precio.isEmpty()) {
-                    // Favor de escribir algo en precio
+                    Toast.makeText(AddItem.this, "Ingresar Precio",
+                            Toast.LENGTH_LONG).show();
                 } else if (urlFoto.isEmpty()) {
-                    // Favor de elegir una imagen
+                    Toast.makeText(AddItem.this, "Elegir Imagen",
+                            Toast.LENGTH_LONG).show();
                 } else {
-                    crud.newItem(new Item(id, nombre, precio, urlFoto));
+                    crud.newItem(new Item(nombre, precio, urlFoto));
                     Intent intent = new Intent(AddItem.this, MainActivity.class);
                     startActivity(intent);
                 }
             }
         });
-
     }
 
-    /*public void validarPermisosStorage() {
+    public void validarPermisosStorage() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
@@ -190,7 +191,7 @@ public class AddItem extends AppCompatActivity {
                         new String[]{Manifest.permission.CAMERA},
                         REQUEST_CAMERA);
             }
-        } else {
+        }else{
             iniciarIntentTomarFoto();
         }
     }
@@ -225,5 +226,5 @@ public class AddItem extends AppCompatActivity {
         String urlName = "file://" + image.getAbsolutePath();
         tvUrl.setText(urlName);
         return image;
-    }*/
+    }
 }

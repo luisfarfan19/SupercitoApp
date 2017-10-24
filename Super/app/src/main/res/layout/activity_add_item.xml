@@ -21,7 +21,7 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.059"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintVertical_bias="0.194" />
+        app:layout_constraintVertical_bias="0.243" />
 
     <EditText
         android:id="@+id/etNombre"
@@ -58,7 +58,7 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintVertical_bias="0.066"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
@@ -78,7 +78,7 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.241" />
 
     <Button
         android:id="@+id/bTomar"
@@ -94,7 +94,7 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.425" />
 
     <Button
         android:id="@+id/bSeleccionar"
@@ -109,23 +109,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.959" />
-
-    <Button
-        android:id="@+id/bGuardar"
-        android:layout_width="92dp"
-        android:layout_height="55dp"
-        android:text="Save"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.971"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintHorizontal_bias="0.959"
+        app:layout_constraintVertical_bias="0.426" />
 
     <ImageView
         android:id="@+id/ivNewFoto"
@@ -142,7 +127,7 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintVertical_bias="0.817" />
+        app:layout_constraintVertical_bias="0.747" />
 
     <TextView
         android:id="@+id/tvUrl"
@@ -160,40 +145,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.981" />
 
-    <TextView
-        android:id="@+id/tvNewId"
-        android:layout_width="134dp"
-        android:layout_height="41dp"
-        android:text="ID: "
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintVertical_bias="0.345" />
-
-    <EditText
-        android:id="@+id/etId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabSave"
+        android:layout_width="73dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981"
+        app:srcCompat="@android:drawable/ic_menu_save" />
 
 
 </android.support.constraint.ConstraintLayout>

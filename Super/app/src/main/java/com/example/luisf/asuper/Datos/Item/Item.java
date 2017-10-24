@@ -1,4 +1,4 @@
-package com.example.luisf.asuper.Datos;
+package com.example.luisf.asuper.Datos.Item;
 
 /**
  * Created by luisf on 12/10/2017.
@@ -12,6 +12,12 @@ public class Item {
 
     public Item(String id, String nombre, String precio, String foto) {
         this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.foto = foto;
+    }
+
+    public Item(String nombre, String precio, String foto) {
         this.nombre = nombre;
         this.precio = precio;
         this.foto = foto;

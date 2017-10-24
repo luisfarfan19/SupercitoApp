@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.luisf.asuper.Datos.Item;
+import com.example.luisf.asuper.Datos.Item.Item;
 import com.example.luisf.asuper.R;
 import com.squareup.picasso.Picasso;
 
@@ -44,11 +44,11 @@ public class CustomAdapter extends ArrayAdapter {
         tvPrecio = (TextView) vistaCustom.findViewById(R.id.tvPrecio);
         tvPrecio.setText(item.getPrecio());
 
-        tvFoto = (TextView) vistaCustom.findViewById(R.id.tvFoto);
-        tvFoto.setText(item.getFoto());
+        /*tvFoto = (TextView) vistaCustom.findViewById(R.id.tvFoto);
+        tvFoto.setText(item.getFoto());*/
 
-        /*ivFoto = (ImageView) vistaCustom.findViewById(R.id.ivFoto);
-        Picasso.with(getContext()).load(item.getFoto()).into(ivFoto);*/
+        ivFoto = (ImageView) vistaCustom.findViewById(R.id.ivFoto);
+        Picasso.with(getContext()).load(item.getFoto()).into(ivFoto);
         return vistaCustom;
     }
 }

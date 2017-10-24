@@ -1,10 +1,12 @@
-package com.example.luisf.asuper.Datos;
+package com.example.luisf.asuper.Datos.Item;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+
+import com.example.luisf.asuper.Datos.DataBaseHelper;
+import com.example.luisf.asuper.Datos.OrderDetail.OrderDetailContract;
 
 import java.util.ArrayList;
 
@@ -21,10 +23,7 @@ public class ItemCRUD {
 
     public void newItem(Item item) {
         SQLiteDatabase db = helper.getWritableDatabase();
-        Log.d("Hola","Muundo");
-        helper.onCreate(db);
         ContentValues values = new ContentValues();
-        values.put(ItemContract.Entrada.COLUMNA_ID, item.getId());
         values.put(ItemContract.Entrada.COLUMNA_NOMBRE, item.getNombre());
         values.put(ItemContract.Entrada.COLUMNA_PRECIO, item.getPrecio());
         values.put(ItemContract.Entrada.COLUMNA_FOTO, item.getFoto());

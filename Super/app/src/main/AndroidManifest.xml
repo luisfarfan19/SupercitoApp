@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.luisf.asuper">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -19,8 +20,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.AddItems" />
-        <activity android:name=".Views.AddItem"></activity>
+        <activity android:name=".Views.AddItem" />
+        <activity android:name=".Views.EditItem" />
+        <activity
+            android:name=".Views.MisCompras"
+            android:label="@string/title_activity_mis_compras"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.Carrito"
+            android:label="@string/title_activity_carrito"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Views.HistorialCompras"></activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.luisf.asuper.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/files_path" />
+        </provider>
+
     </application>
 
 </manifest>
